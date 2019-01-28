@@ -80,6 +80,11 @@ namespace Lesson3
 
             one.numerator = (x1 * nod / y1) + (x2*nod / y2);
             one.denominator = nod;
+            
+            int nod2=Nod(one.numerator,one.denominator);
+            one.numerator = one.numerator/nod2;
+            one.denominator = one.denominator/nod2;
+
             return one; 
         }
 
@@ -95,6 +100,11 @@ namespace Lesson3
             int nod = Nod(y1, y2);
             one.numerator = (x1 * nod / y1) - (x2 * nod / y2);
             one.denominator = nod;
+
+            int nod2 = Nod(one.numerator, one.denominator);
+            one.numerator = one.numerator / nod2;
+            one.denominator = one.denominator / nod2;
+
             return one;
         }
         public Fractions Multi(Fractions tu)
@@ -108,6 +118,11 @@ namespace Lesson3
             int nod = Nod(y1, y2);
             one.numerator = (x1 * nod / y1) * (x2 * nod / y2);
             one.denominator = nod;
+
+            int nod2 = Nod(one.numerator, one.denominator);
+            one.numerator = one.numerator / nod2;
+            one.denominator = one.denominator / nod2;
+
             return one;
         }
         public Fractions Del(Fractions tu)
@@ -121,6 +136,11 @@ namespace Lesson3
             int nod = Nod(y1, y2);
             one.numerator = (x1 * nod / y1) / (x2 * nod / y2);
             one.denominator = nod;
+
+            int nod2 = Nod(one.numerator, one.denominator);
+            one.numerator = one.numerator / nod2;
+            one.denominator = one.denominator / nod2;
+
             return one;
         }
         public double DoubleFractions()
