@@ -48,21 +48,17 @@ namespace Lesson4
             // Задача 1
             Console.WriteLine("Задача 1");
             Program pr=new Program();            
-            Console.WriteLine(pr.Para());
+            Console.WriteLine("Количестов пар в массиве = "+pr.Para());
             PrintMas(pr.mas);
             
             // Задача 2
             // Создан класс для нее StaticClass
             Console.WriteLine("Задача 2");
             int[] maC=StaticClass.FileArray("mas.txt");
-            try
-            {
+            
                 PrintMas(maC);
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+                Console.WriteLine("\n Количестов пар в массиве = " + StaticClass.Para(maC));
+           
 
               
             Console.ReadKey();

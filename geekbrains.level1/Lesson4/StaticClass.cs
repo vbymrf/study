@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -35,17 +36,21 @@ namespace Lesson4
            try
            {
                sr = new StreamReader(f_name);
-               int LengtF=0;
-               while (sr.ReadLine() != null) LengtF++;
+               ArrayList lis=new ArrayList();
+               
+               lis.Add(sr.ReadLine());
+                int LengtF=1;
+               while (lis[lis.Count -1] != null)
+               {
+                   lis.Add(sr.ReadLine());
+                   Console.WriteLine(lis[lis.Count - 1]);
+                   LengtF++;
+               }
                mas = new int[LengtF];
                for (int i = 0; i < LengtF; i++)
                {
-                   int n;
+                   if (!int.TryParse((string)lis[i], out mas[i])) ; // throw new Exception("Прочитали не верно. В массиве [" + i + "] записано 0 по умолчанию");
                    
-                   n=int.Parse(sr.ReadLine());
-                   Console.WriteLine(n);
-                   //if (int.TryParse(sr.ReadLine(), out mas[i])) throw new Exception("Прочитали не верно. В массиве ["+i+"] записано 0 по умолчанию");
-                   //mas[i] = int.Parse(sr.ReadLine());
                }
 
                sr.Close();
