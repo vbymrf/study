@@ -94,5 +94,22 @@ namespace Lesson6
             fs.Close();
             return min;
         }
+        public static double[] LoadWriteLine(string fileName,out double min)
+        {
+            FileStream fs = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            BinaryReader bw = new BinaryReader(fs);
+            double[] mas=new double[fs.Length];
+            min = double.MaxValue;
+            double d;
+            for (int i = 0; i < fs.Length / sizeof(double); i++)
+            {
+                // Считываем значение и переходим к следующему
+                mas[i]=d = bw.ReadDouble();
+                if (d < min) min = d;
+            }
+            bw.Close();
+            fs.Close();
+            return mas;
+        }
     }
 }

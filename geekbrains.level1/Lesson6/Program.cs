@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using System.IO;
 using System.Collections;
+using System.Drawing;
 
 namespace Lesson6
 {
@@ -37,8 +38,9 @@ namespace Lesson6
             double[] per= Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
             Func.SaveFunc((FuncD)fun[funcF], "data.bin",per[0],per[1],per[2],per[3]);
             Console.WriteLine(Func.Load("data.bin"));
-            double min;
+            double min; //б вариант
             double[] mas = Func.LoadWriteLine("data.bin", out min);
+            
         }
     }
 }
