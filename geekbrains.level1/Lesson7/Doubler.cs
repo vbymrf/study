@@ -25,15 +25,15 @@ namespace Lesson7
         }
         
 
-        internal static int NumberFinish(int geni)
-        {
-            int nam;
-            return geni / 2 + geni%2;
-            return geni;
-        }
-        internal static int NumberFinish2(int geni)        {
-            if (geni == 2) return 1;
-            return NumberFinish2(geni/2) / 2 + NumberFinish2(geni / 2) % 2;            
-        }
+        //internal static int NumberFinish(int geni)
+        //{
+        //    int nam;
+        //    return geni / 2 + geni%2;
+        //    return geni;
+        //}
+        //internal static int NumberFinish2(int geni)        {
+        //    if (geni == 2) return 1;
+        //    return NumberFinish2(geni/2) / 2 + NumberFinish2(geni / 2) % 2;            
+        //}
     }
 }
